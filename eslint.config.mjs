@@ -6,9 +6,15 @@ import { fixupPluginRules } from '@eslint/compat';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import { FlatCompat } from '@eslint/eslintrc';
+
+const compat = new FlatCompat({
+  baseDirectory: import.meta.dirname
+});
 
 export default tseslint.config(
   js.configs.recommended,
+  ...compat.extends('next/core-web-vitals', 'next'),
   ...tseslint.configs.recommended,
   {
     rules: {
@@ -28,7 +34,7 @@ export default tseslint.config(
   },
   ...pluginQuery.configs['flat/recommended'],
   {
-    plugins: { 'react-hooks': fixupPluginRules(eslintPluginReactHooks) },
+    plugins: { 'r/react-hooks': fixupPluginRules(eslintPluginReactHooks) },
     rules: { ...eslintPluginReactHooks.configs.recommended.rules }
   },
   {

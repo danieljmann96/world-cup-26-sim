@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "keywords": [],
   "author": "",
@@ -26,17 +27,11 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.1",
-    "vite-tsconfig-paths": "^5.1.4"
+    "typescript-eslint": "^8.44.1"
   },
   "dependencies": {
-    "@nabla/vite-plugin-eslint": "^2.0.6",
-    "@tanstack/nitro-v2-vite-plugin": "^1.132.0",
-    "@tanstack/react-router": "^1.132.6",
-    "@tanstack/react-start": "^1.132.6",
-    "@vitejs/plugin-react": "^5.0.3",
+    "next": "^15.5.4",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "vite": "^7.1.7"
+    "react-dom": "^19.1.1"
   }
 }
